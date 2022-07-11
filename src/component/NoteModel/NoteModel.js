@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Form, Input, Modal } from 'antd';
+import axios from 'axios';
 
 
 const layout = {
@@ -18,13 +19,30 @@ const tailLayout = {
   },
 };
 
-export default function NoteModel({visible = false, onOk = () => {}, setVisible = () => {}}) {
+export default function NoteModel({visible = false, setRefreshNotes = () => {}, setVisible = () => {}}) {
+
+  const [name,setName] = useState('');
+  const [projectName,setProjectName] = useState('');
+  const [note,setNote] = useState('');
 
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
     console.log(values);
-    onOk(values);
+    axios.post("https://nutanix-farewell.herokuapp.com/api/saveNote", {
+      name,
+      projectName,
+      // user incoming ?
+      user: "user",
+      note
+    }).then(res => {
+      setRefreshNotes(true);
+    })
+    .catch(error => {;
+      console.error(error);
+    });
+    setVisible(false);
+    onReset();
   };
 
   const onReset = () => {
@@ -37,8 +55,8 @@ export default function NoteModel({visible = false, onOk = () => {}, setVisible 
         title="Your message to Atreyee."
         centered
         visible={visible}
-        onOk={() => form.submit()  }
-        onCancel={() => {onReset();  setVisible(false);}}
+        onOk={() => form.submit()}
+        onCacel={() => {onReset();  setVisible(false);}}
         width={500}
       >
         <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
@@ -47,16 +65,22 @@ export default function NoteModel({visible = false, onOk = () => {}, setVisible 
             label="Your Name"
             rules={[{ required: true, message: 'Please add your Name' }]}
           >
-            <Input />
+            <Input
+            value = {name}
+            onChange = {(e) => setName(e.target.value)}
+            />
           </Form.Item>
-       
-        
+
+
           <Form.Item
             name="projectName"
             label="Team/Project Name"
             rules={[{ required: true, message: 'Please add your Team Name' }]}
           >
-            <Input />
+            <Input
+            value = {projectName}
+            onChange = {(e) => setProjectName(e.target.value)}
+            />
           </Form.Item>
 
           <Form.Item
@@ -64,7 +88,11 @@ export default function NoteModel({visible = false, onOk = () => {}, setVisible 
             label="Farewell Note"
             rules={[{ required: true, message: 'Please add Note' }]}
           >
-            <Input.TextArea rows={4} showCount maxLength={200} />
+            <Input.TextArea
+            rows={4} showCount maxLength={200}
+            value = {note}
+            onChange = {(e) => setNote(e.target.value)}
+            />
           </Form.Item>
 
           <Form.Item {...tailLayout}>

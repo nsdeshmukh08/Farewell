@@ -4,26 +4,29 @@ import Header from './component/Header/Header';
 import { Layout } from 'antd';
 import Side from './component/Side/Side';
 import NotesContainer from './component/NotesContainer/NotesContainer';
+import { useState } from 'react';
 const { Header : AntHeader, Sider, Content } = Layout;
 
 function App() {
+  const [refreshNotes, setRefreshNotes] = useState(true)
+
   return (
     <div className='App'>
        <Layout>
         <AntHeader>
-          <Header/>
+          <Header setRefreshNotes = {setRefreshNotes}/>
         </AntHeader>
         <Layout>
           <Sider>
             <Side/>
           </Sider>
           <Content>
-            <NotesContainer/>
+            <NotesContainer refreshNotes = {refreshNotes} setRefreshNotes = {setRefreshNotes}/>
           </Content>
         </Layout>
       </Layout>
     </div>
-   
+
   );
 }
 
