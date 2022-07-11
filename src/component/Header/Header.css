@@ -1,0 +1,12 @@
+h1 {
+  font-size: 35px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-add-msg-btn {
+  margin-top: 15px;
+}

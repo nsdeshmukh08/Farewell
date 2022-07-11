@@ -1,0 +1,15 @@
+.side {
+  margin-left: 50px;
+
+}
+
+.user-img {
+  width: 270px;
+  margin-top: 30px;
+  border-radius: 50%;
+}
+
+h2 {
+  width: 300px;
+  margin-top: 30px;
+}

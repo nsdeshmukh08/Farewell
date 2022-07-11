@@ -1,8 +1,28 @@
+@import '~antd/dist/antd.css';
+
 .App {
-  text-align: center;
+  background: #f0f2f5;
+  padding: 20px;
 }
 
-.App-logo {
+.ant-layout-header{
+  background: #f0f2f5;
+}
+
+.ant-layout-sider {
+  background: #f0f2f5;
+}
+
+body {
+  overflow-y: clip;
+}
+
+.farewell-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +55,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
