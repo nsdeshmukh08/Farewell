@@ -13,7 +13,7 @@ function App() {
         <AntHeader>
           <Header/>
         </AntHeader>
-        <Layout>
+        <Layout className='body-layout'>
           <Sider>
             <Side/>
           </Sider>

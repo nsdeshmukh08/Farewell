@@ -64,7 +64,7 @@ export default function NoteModel({visible = false, onOk = () => {}, setVisible 
             label="Farewell Note"
             rules={[{ required: true, message: 'Please add Note' }]}
           >
-            <Input.TextArea rows={4} showCount maxLength={200} />
+            <Input.TextArea rows={4} showCount maxLength={400} />
           </Form.Item>
 
           <Form.Item {...tailLayout}>

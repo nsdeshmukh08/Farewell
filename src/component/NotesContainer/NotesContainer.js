@@ -11,7 +11,7 @@ export default function NotesContainer() {
         <strong>Team:</strong> Aiops-ui
       </div>
       
-      <div><strong>Date: </strong>10-07-2022</div>
+      <div className='date'><strong>Date: </strong>10-07-2022</div>
     </div>
   </>)
 
@@ -19,7 +19,8 @@ export default function NotesContainer() {
     <div className='notes-container'>
 
       <Card hoverable title={<CardHeader/>} className='note' bordered={false}>
-       Thank you
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rem natus architecto assumenda? Officia perferendis debitis blanditiis eligendi maiores voluptates facilis atque libero dolores, amet aperiam veniam pariatur consectetur eum hic laudantium quo vero tempore at ea quas! Necessitatibus alias eum tenetur iste sint provident non culpa aut praesentium exercitationem?
+
       </Card>
 
       <Card hoverable title={<CardHeader/>} className='note' bordered={false}>

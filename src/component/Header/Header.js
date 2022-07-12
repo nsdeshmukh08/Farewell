@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <div className='header'>
       <h1>
-        Farewell Card For Atreyee. Let's create a nice memory for her!
+        Farewell Card For Atreyee. <span className='sub-header'>Let's create a nice memory for her!</span>
       </h1>
       
       <Button 

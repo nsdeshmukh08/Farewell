@@ -13,3 +13,20 @@ h2 {
   width: 300px;
   margin-top: 30px;
 }
+
+@media only screen 
+  and (min-device-width: 370px) 
+  and (max-device-width: 812px)  { 
+    .side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0px;
+    }
+
+    aside.ant-layout-sider-dark {
+      width: unset !important;
+      max-width:unset !important;
+      min-width:unset !important;
+    }
+}

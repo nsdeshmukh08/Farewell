@@ -56,3 +56,23 @@ body {
     transform: rotate(360deg);
   }
 } */
+
+
+
+
+@media only screen 
+  and (min-device-width: 370px) 
+  and (max-device-width: 812px)  { 
+  .body-layout {
+    margin-top: 80px;
+    flex-direction: column !important;
+  }
+
+  .ant-layout-header{
+    padding: 0 !important;
+  }
+
+  body {
+    overflow-y: scroll;
+  }
+}
