@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import {useEffect} from 'react'
 import { Card } from 'antd';
-import axios from 'axios';
+import getNotes from './get';
 
 import './NotesContainer.css'
+
+// take first 10 characters of "time".
+function getDate (time){
+  return time.substring(0,10);
+}
 
 export default function NotesContainer({refreshNotes = true, setRefreshNotes = () => {}}) {
   const CardHeader = ({note}) => {
@@ -13,7 +18,7 @@ export default function NotesContainer({refreshNotes = true, setRefreshNotes = (
           <strong>Name: </strong>{note.name}<br></br>
           <strong>Team:</strong> {note.projectName}
         </div>
-        <div><strong>Date: </strong>{note.time}</div>
+        <div><strong>Date: </strong>{getDate(note.time)}</div>
       </div>
     </>)
   }
@@ -22,13 +27,9 @@ export default function NotesContainer({refreshNotes = true, setRefreshNotes = (
 
   useEffect(() => {
     setRefreshNotes(false);
-    axios.get('https://nutanix-farewell.herokuapp.com/api/getNotes')
-    .then(res => {
-      setNotes(res.data.data)
+    getNotes().then(res => {
+      setNotes(res);
     })
-    .catch(error => {;
-      console.error(error);
-    });
   },[refreshNotes, setRefreshNotes]);
 
   const cards = notes.map((note, index) => {
