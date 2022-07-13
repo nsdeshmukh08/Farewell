@@ -6,17 +6,17 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 
@@ -26,12 +26,34 @@
   margin-right: 50px;
   margin-top: 27px;
   padding: 20px;
-  height: 42%;
+  /* height: 42%; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
   overflow-y: auto;
+}
+
+.notebook{
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 50%);
+}
+
+.notebookPage{
+  font-family: 'Edu QLD Beginner', cursive;
+  padding: 20px;
+  background-color: #fdfaf7;
+  color: #785e3a;
+  border: 1px solid #c2b5a3;
+  overflow: hidden;
+}
+
+.notebookPage.--left{
+  border-right: 0;
+  box-shadow: inset -7px 0 30px -7px rgb(0 0 0 / 40%);
+}
+
+.notebookPage.--right{
+  border-left: 0;
+  box-shadow: inset 7px 0 30px -7px rgb(0 0 0 / 40%);
 }
 
 .note {
@@ -58,8 +80,8 @@
 }
 
 
-@media only screen   
-and (min-width: 1600px)   
+@media only screen
+and (min-width: 1600px)
 and (max-width: 2000px)  {
   .notes-container {
     border: 1px solid #d9d9d9;
@@ -71,19 +93,19 @@ and (max-width: 2000px)  {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  
+
     overflow-y: auto;
   }
-  
+
 }
 
-@media only screen 
-  and (min-device-width: 370px) 
-  and (max-device-width: 812px)  { 
+@media only screen
+  and (min-device-width: 370px)
+  and (max-device-width: 812px)  {
     .notes-container {
       border: 1px solid #d9d9d9;
       display: block;
-      margin-left: 0px; 
+      margin-left: 0px;
       margin-right: 0px;
       width: 100%;
       padding: 10px;
