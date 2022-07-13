@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Form, Input, Modal } from 'antd';
-
+import postNotes from './post';
 
 const layout = {
   labelCol: {
@@ -18,13 +18,17 @@ const tailLayout = {
   },
 };
 
-export default function NoteModel({visible = false, onOk = () => {}, setVisible = () => {}}) {
+export default function NoteModel({visible = false, setRefreshNotes = () => {}, setVisible = () => {}}) {
 
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
+    values["user"] = "Atreyee";
     console.log(values);
-    onOk(values);
+    postNotes(values);
+    setRefreshNotes(true);
+    setVisible(false);
+    onReset();
   };
 
   const onReset = () => {
@@ -49,8 +53,8 @@ export default function NoteModel({visible = false, onOk = () => {}, setVisible 
           >
             <Input />
           </Form.Item>
-       
-        
+
+
           <Form.Item
             name="projectName"
             label="Team/Project Name"
