@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className='App'>
-       <Layout>
+      <Layout>
         <AntHeader>
           <Header setRefreshNotes = {setRefreshNotes}/>
         </AntHeader>

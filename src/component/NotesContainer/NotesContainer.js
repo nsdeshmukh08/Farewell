@@ -11,12 +11,13 @@ function getDate (time){
 
 export default function NotesContainer({refreshNotes = true, setRefreshNotes = () => {}}) {
 
-
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setRefreshNotes(false);
     getNotes().then(res => {
+      setLoading(false);
       setNotes(res);
     })
   },[refreshNotes, setRefreshNotes]);
@@ -24,13 +25,20 @@ export default function NotesContainer({refreshNotes = true, setRefreshNotes = (
   const pages = notes.map((note, index) => {
     return (
       <div className="notebookPage">
-        <h1>{note.name}</h1>
-        <p>{note.projectName}</p>
+        <h3>{note.name}</h3>
+        <h4>{note.projectName} -  {getDate(note.time)}</h4>
         <p>{note.note}</p>
-        <p>{getDate(note.time)}</p>
       </div>
     )
   })
+
+  if(loading) {
+    return (
+      <div className='notes-container'>
+        Loading your card....
+      </div>
+    )
+  }
 
   return (
     <div className='notes-container'>
