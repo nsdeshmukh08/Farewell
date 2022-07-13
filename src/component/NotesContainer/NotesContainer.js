@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useEffect} from 'react'
-import { Card } from 'antd';
 import getNotes from './get';
+import HTMLFlipBook from 'react-pageflip';
 
 import './NotesContainer.css'
 
@@ -11,16 +11,6 @@ function getDate (time){
 
 export default function NotesContainer({refreshNotes = true, setRefreshNotes = () => {}}) {
 
-  const CardHeader = ({note}) => (<>
-    <div className='card-header'>
-      <div>
-        <strong>Name: </strong>{note.name}<br></br>
-        <strong>Team:</strong> {note.projectName}
-      </div>
-
-      <div className='date'><strong>Date: </strong>{getDate(note.time)}</div>
-    </div>
-  </>)
 
   const [notes, setNotes] = useState([])
 
@@ -31,17 +21,22 @@ export default function NotesContainer({refreshNotes = true, setRefreshNotes = (
     })
   },[refreshNotes, setRefreshNotes]);
 
-  const cards = notes.map((note, index) => {
+  const pages = notes.map((note, index) => {
     return (
-      <Card hoverable title={<CardHeader note = {note}/>} className='note' bordered={false}>
+      <div className="notebookPage">
+        <h1>{note.name}</h1>
+        <p>{note.projectName}</p>
         <p>{note.note}</p>
-      </Card>
-
+        <p>{getDate(note.time)}</p>
+      </div>
     )
   })
+
   return (
     <div className='notes-container'>
-      {cards}
+      <HTMLFlipBook width={300} height={500} maxShadowOpacity={0.5} className="notebook">
+        {pages}
+      </HTMLFlipBook>
     </div>
   )
 }
