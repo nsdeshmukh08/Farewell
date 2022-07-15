@@ -1,0 +1,29 @@
+.modal .ant-modal-content{
+    opacity: 0.8;
+    background-color: #bc7ce6;
+    border-radius: 10px;
+}
+
+.ant-modal-header{
+    background-color: #bc7ce6;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.ant-modal-body{
+    border: none;
+}
+
+.ant-modal-footer{
+    border: none;
+}
+
+
+.ant-form-item-label{
+    font-family: 'Cormorant SC', serif;
+}
+
+.ant-btn{
+    border-radius: 5px;
+}

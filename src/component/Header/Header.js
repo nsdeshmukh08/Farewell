@@ -13,13 +13,13 @@ export default function Header({setRefreshNotes = () => {}}) {
       <h1>
         Farewell Card For Atreyee. <span className='sub-header'>Let's create a nice memory for her!</span>
       </h1>
-
+      
       <Button
         type="primary"
-        className='header-add-msg-btn'
+        className='header-add-msg-btn btn-3'
         onClick= {() => setVisible(true)}>
-          Please add your note +
-      </Button>
+          <span>&nbsp;&nbsp;Please add your note +&nbsp;&nbsp;</span>
+        </Button>
 
       <NoteModel visible={visible} setVisible={setVisible} setRefreshNotes={setRefreshNotes}/>
     </div>

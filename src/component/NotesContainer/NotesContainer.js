@@ -42,7 +42,7 @@ export default function NotesContainer({refreshNotes = true, setRefreshNotes = (
 
   return (
     <div className='notes-container'>
-      <HTMLFlipBook width={300} height={500} maxShadowOpacity={0.5} className="notebook">
+      <HTMLFlipBook width={400} height={550} maxShadowOpacity={0.5} className="notebook">
         {pages}
       </HTMLFlipBook>
     </div>
