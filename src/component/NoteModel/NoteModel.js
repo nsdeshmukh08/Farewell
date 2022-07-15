@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Form, Input, Modal } from 'antd';
 import postNotes from './post';
+import './NoteModel.css'
 
 const layout = {
   labelCol: {
@@ -37,7 +38,8 @@ export default function NoteModel({visible = false, setRefreshNotes = () => {}, 
 
 
   return (
-    <Modal
+    <Modal 
+        className='modal'
         title="Your message to Atreyee."
         centered
         visible={visible}
