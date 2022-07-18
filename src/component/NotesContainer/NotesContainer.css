@@ -86,7 +86,7 @@ and (max-width: 2000px)  {
 
 @media only screen
   and (min-device-width: 370px)
-  and (max-device-width: 812px)  {
+  and (max-device-width: 1500px)  {
     .notes-container {
       display: flex;
       justify-content: center;
