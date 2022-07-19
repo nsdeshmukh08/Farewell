@@ -1,11 +1,11 @@
 .modal .ant-modal-content{
     opacity: 0.8;
-    background-color: #bc7ce6;
+    background-color: rgb(251, 248, 248);
     border-radius: 10px;
 }
 
 .ant-modal-header{
-    background-color: #bc7ce6;
+    background-color: rgb(251, 248, 248);
     border: none;
     border-radius: 10px;
     font-family: 'Fira Sans', sans-serif;
@@ -21,7 +21,7 @@
 
 
 .ant-form-item-label{
-    font-family: 'Cormorant SC', serif;
+    font-family: 'Edu QLD Beginner', cursive;
 }
 
 .ant-btn{

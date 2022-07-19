@@ -9,14 +9,6 @@ function getDate (time){
   return time.substring(0,10);
 }
 
-function getRandomColor() {
-  const randomColor = Math.floor(Math.random()*16777215).toString(16);
-  console.log(randomColor);
-  return {
-      color: '#'+randomColor
-  };
-}
-
 export default function NotesContainer({refreshNotes = true, setRefreshNotes = () => {}}) {
 
   const [notes, setNotes] = useState([]);
@@ -33,9 +25,9 @@ export default function NotesContainer({refreshNotes = true, setRefreshNotes = (
   const pages = notes.map((note, index) => {
     return (
       <div className="notebookPage">
-        <h3 style={getRandomColor()}>{note.name}</h3>
-        <h4 style={getRandomColor()}>{note.projectName} -  {getDate(note.time)}</h4>
-        <p style={getRandomColor()}>{note.note}</p>
+        <h3 className='nameColour'>{note.name}</h3>
+        <h4 className='projectColour'>{note.projectName} -  {getDate(note.time)}</h4>
+        <p className='noteColour'>{note.note}</p>
       </div>
     )
   })
