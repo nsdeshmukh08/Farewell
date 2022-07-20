@@ -72,6 +72,17 @@
   padding-bottom: 10px;
 }
 
+.nameColour{
+  color: #5d6cc1;
+}
+
+.projectColour{
+  color: rgb(9, 164, 248);
+}
+
+.noteColour{
+  color: #1272a5;
+}
 
 @media only screen
 and (min-width: 1600px)
