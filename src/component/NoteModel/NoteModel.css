@@ -1,5 +1,5 @@
 .modal .ant-modal-content{
-    opacity: 0.8;
+    /* opacity: 0.8; */
     background-color: rgb(251, 248, 248);
     border-radius: 10px;
 }

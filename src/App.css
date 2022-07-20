@@ -73,6 +73,11 @@ body {
     flex-direction: column !important;
   }
 
+  .App {
+    background: #f0f2f5;
+    height: 1500px;
+  }
+
   .ant-layout-header{
     padding: 0 !important;
   }

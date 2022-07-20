@@ -35,14 +35,14 @@ export default function NotesContainer({refreshNotes = true, setRefreshNotes = (
   if(loading) {
     return (
       <div className='notes-container'>
-        Loading your card....
+        <h2>Loading your card....</h2>
       </div>
     )
   }
 
   return (
     <div className='notes-container'>
-      <HTMLFlipBook width={400} height={550} maxShadowOpacity={0.5} className="notebook">
+      <HTMLFlipBook width={350} height={550} maxShadowOpacity={0.5} className="notebook">
         {pages}
       </HTMLFlipBook>
     </div>
